@@ -26,7 +26,10 @@
 }
 
 .navbar {
-	margin-bottom: 0; /* removes default excess margin */
+	background: white;
+	border-width: 0px;
+	margin-bottom: 20px; /* removes default excess margin */
+	margin-top: 20px;
 }
 
 .divider {
