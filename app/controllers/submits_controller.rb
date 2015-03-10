@@ -15,6 +15,7 @@ class SubmitsController < ApplicationController
   # GET /submits/new
   def new
     @submit = Submit.new
+    @questions = Question.all
   end
 
   # GET /submits/1/edit
@@ -25,10 +26,15 @@ class SubmitsController < ApplicationController
   # POST /submits.json
   def create
     @submit = Submit.new(submit_params)
+    @submit.save
+    params[:submit][:question_ids].each do |question_id|
+      @question = question.find(question_id)
+      @submit.questions << @questions
+    end
 
     respond_to do |format|
       if @submit.save
-        format.html { redirect_to @submit, notice: 'Submit was successfully created.' }
+        format.html { redirect_to @submit, notice: 'Application was successfully created.' }
         format.json { render :show, status: :created, location: @submit }
       else
         format.html { render :new }
@@ -42,7 +48,7 @@ class SubmitsController < ApplicationController
   def update
     respond_to do |format|
       if @submit.update(submit_params)
-        format.html { redirect_to @submit, notice: 'Submit was successfully updated.' }
+        format.html { redirect_to @submit, notice: 'Application was successfully updated.' }
         format.json { render :show, status: :ok, location: @submit }
       else
         format.html { render :edit }

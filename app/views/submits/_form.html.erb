@@ -12,9 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name,"Team Name" %><br>
     <%= f.text_field :name %>
   </div>
+    <% @questions.each do |emotion| %>
+      <div class="field">
+        <%= f.text_field "submit[question_ids][]", question.id %>
+        <%= label_tag(question.question) %>
+      </div>
+    <% end %> 
   <div class="actions">
     <%= f.submit "Apply", class: "btn btn-primary btn-lg" %>
   </div>
