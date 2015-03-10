@@ -13,15 +13,17 @@
 
   <div class="field">
     <%= f.label :name,"Team Name" %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control"  %>
   </div>
-    <% @questions.each do |emotion| %>
+
+    <% @questions.each do |question| %>
       <div class="field">
-        <%= f.text_field "submit[question_ids][]", question.id %>
-        <%= label_tag(question.question) %>
+        <%= f.label(question.question)%>
+        <%= text_area_tag "submit[question_ids][]" %>
       </div>
     <% end %> 
+
   <div class="actions">
-    <%= f.submit "Apply", class: "btn btn-primary btn-lg" %>
+    <%= f.submit "Submit Application", class: "btn btn-warning btn-lg" %>
   </div>
 <% end %>

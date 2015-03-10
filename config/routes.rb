@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :submits
-
+  get "about" => "pages#about"
+  get "apply" => "pages#apply"
   root 'pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
