@@ -19,6 +19,12 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
+#Admin panel for managing users and questions.
+gem 'activeadmin', github: 'activeadmin'
+
+#Devise for user authentication
+gem 'devise'
+
 #bootstrap
 gem 'bootstrap-sass'
 
