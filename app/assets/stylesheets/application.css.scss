@@ -20,11 +20,6 @@
 .banner img {
 	 width: 100%;
 }
-
-.marketing .row {
-	text-align: center;	
-}
-
 .navbar {
 	background: white;
 	border-width: 0px;
@@ -33,7 +28,25 @@
 	margin-bottom: 20px; /* removes default excess margin */
 	margin-top: 20px;
 }
-
+.vpmain {
+	padding-top: 450px;
+}
+.landing {
+  background: asset-data-url('beach.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color:white;
+  width: 100%;
+  min-height: 700px;
+  margin-top: -45px;
+}
+.marketing {
+ 
+}
+.marketing .row {
+	text-align: center;	
+}
 .divider {
   margin: 80px 0; 
 }
