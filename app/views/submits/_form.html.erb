@@ -19,7 +19,7 @@
     <% @questions.each do |question| %>
      
       <div class="field">
-      <%= f.fields_for :submits do |s| %>
+      <%= f.fields_for :submit do |s| %>
        <%= s.label(question.question) %>
         <%= s.text_area :question, class: "form-control" %>
       <% end %>

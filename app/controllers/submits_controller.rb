@@ -28,10 +28,10 @@ class SubmitsController < ApplicationController
     @submit = Submit.new(submit_params)
     @submit.save
     params[:submit][:question_ids].each do |question_id|
-      @question = question.find(question_id)
-      @submit.questions << @questions
+      @question = Question.find(question_id)
+      @submit.questions << @question
     end
-
+ 
     respond_to do |format|
       if @submit.save
         format.html { redirect_to @submit, notice: 'Application was successfully created.' }
