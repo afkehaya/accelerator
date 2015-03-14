@@ -17,10 +17,14 @@
   </div>
 
     <% @questions.each do |question| %>
+     
       <div class="field">
-        <%= f.label(question.question)%>
-        <%= text_area_tag "submit[question_ids][]" %>
-      </div>
+      <%= f.fields_for :submits do |s| %>
+       <%= s.label(question.question) %>
+        <%= s.text_area :question, class: "form-control" %>
+      <% end %>
+    </div>
+  
     <% end %> 
 
   <div class="actions">
