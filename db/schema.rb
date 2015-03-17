@@ -52,11 +52,6 @@ ActiveRecord::Schema.define(version: 20150314185658) do
     t.datetime "updated_at"
   end
 
-  create_table "questions_pins", force: true do |t|
-    t.integer "question_id"
-    t.integer "submit_id"
-  end
-
   create_table "questions_submits", force: true do |t|
     t.integer "question_id"
     t.integer "submit_id"
