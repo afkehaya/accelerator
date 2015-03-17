@@ -25,12 +25,14 @@ class SubmitsController < ApplicationController
   # POST /submits
   # POST /submits.json
   def create
+  byebug
     @submit = Submit.new(submit_params)
     @submit.save
     params[:submit][:question_ids].each do |question_id|
       @question = Question.find(question_id)
       @submit.questions << @question
     end
+    
  
     respond_to do |format|
       if @submit.save

@@ -21,7 +21,7 @@
       <div class="field">
       <%= f.fields_for :submit do |s| %>
        <%= s.label(question.question) %>
-        <%= s.text_area :question, class: "form-control" %>
+        <%= s.text_area question.id.to_s.to_sym, class: "form-control" %>
       <% end %>
     </div>
   

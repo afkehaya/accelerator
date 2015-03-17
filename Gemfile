@@ -25,6 +25,7 @@ gem 'activeadmin', github: 'activeadmin'
 #Devise for user authentication
 gem 'devise'
 
+gem 'byebug', group: :debug
 #bootstrap
 gem 'bootstrap-sass'
 
